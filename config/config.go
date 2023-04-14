@@ -11,7 +11,7 @@ type Config struct {
 	Name string
 }
 
-// 对外的初始化配置方法
+// Run 对外的初始化配置方法
 func Run(cfg string) error {
 	c := Config{
 		Name: cfg,
