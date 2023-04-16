@@ -11,7 +11,7 @@
  Target Server Version : 80032
  File Encoding         : 65001
 
- Date: 15/04/2023 06:39:11
+ Date: 16/04/2023 09:06:15
 */
 
 SET NAMES utf8mb4;
@@ -50,8 +50,12 @@ COMMIT;
 DROP TABLE IF EXISTS `vr`;
 CREATE TABLE `vr` (
   `id` int NOT NULL COMMENT '主键',
-  `name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '名称',
-  `thumbnail` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '缩略图',
+  `name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '名称',
+  `thumbnail` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '缩略图',
+  `scenes` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '场景',
+  `is_watermark` tinyint(1) NOT NULL COMMENT '是否去水印,0否,1是',
+  `is_auto_rotate` tinyint(1) NOT NULL COMMENT '是否自动旋转,0否,1是',
+  `rotate_speed` tinyint(1) NOT NULL COMMENT '旋转速度,0慢,1中,2快',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
