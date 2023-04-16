@@ -11,7 +11,7 @@
  Target Server Version : 80032
  File Encoding         : 65001
 
- Date: 16/04/2023 09:06:15
+ Date: 16/04/2023 09:18:19
 */
 
 SET NAMES utf8mb4;
@@ -36,7 +36,7 @@ CREATE TABLE `user` (
   `update_time` datetime DEFAULT NULL COMMENT '更新日期',
   `delete_flag` tinyint(1) NOT NULL COMMENT '删除标记',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC COMMENT='用户';
 
 -- ----------------------------
 -- Records of user
@@ -52,12 +52,15 @@ CREATE TABLE `vr` (
   `id` int NOT NULL COMMENT '主键',
   `name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '名称',
   `thumbnail` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '缩略图',
-  `scenes` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '场景',
-  `is_watermark` tinyint(1) NOT NULL COMMENT '是否去水印,0否,1是',
-  `is_auto_rotate` tinyint(1) NOT NULL COMMENT '是否自动旋转,0否,1是',
-  `rotate_speed` tinyint(1) NOT NULL COMMENT '旋转速度,0慢,1中,2快',
+  `scenes` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '场景',
+  `rotate_speed` tinyint(1) DEFAULT NULL COMMENT '旋转速度,0慢,1中,2快',
+  `is_watermark` tinyint(1) DEFAULT NULL COMMENT '去水印,0否,1是',
+  `is_auto_rotate` tinyint(1) DEFAULT NULL COMMENT '自动旋转,0否,1是',
+  `is_automatic_jump` tinyint(1) DEFAULT NULL COMMENT '自动跳转,0否,1是',
+  `is_asteroid_opening` tinyint(1) DEFAULT NULL COMMENT '小行星开场,0否,1是',
+  `views` int DEFAULT NULL COMMENT '浏览量',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='全景';
 
 -- ----------------------------
 -- Records of vr
