@@ -2,13 +2,16 @@ package config
 
 import (
 	"fmt"
-
 	"github.com/fsnotify/fsnotify"
 	"github.com/spf13/viper"
 )
 
+type DB struct {
+}
+
 type Config struct {
 	Name string
+	db   *DB
 }
 
 // Run 对外的初始化配置方法
