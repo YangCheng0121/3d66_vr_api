@@ -11,7 +11,7 @@
  Target Server Version : 80032
  File Encoding         : 65001
 
- Date: 18/04/2023 09:03:22
+ Date: 20/04/2023 13:12:59
 */
 
 SET NAMES utf8mb4;
@@ -54,9 +54,13 @@ CREATE TABLE `vr`  (
   `rotate_speed` tinyint(1) NULL DEFAULT NULL COMMENT '旋转速度,0慢,1中,2快',
   `is_watermark` tinyint(1) NULL DEFAULT NULL COMMENT '去水印,0否,1是',
   `is_auto_rotate` tinyint(1) NULL DEFAULT NULL COMMENT '自动旋转,0否,1是',
-  `is_automatic_jump` tinyint(1) NULL DEFAULT NULL COMMENT '自动跳转,0否,1是',
+  `is_automatic_jump` tinyint(1) NULL DEFAULT NULL COMMENT '自动跳转后跳转,0否,1是',
   `is_asteroid_opening` tinyint(1) NULL DEFAULT NULL COMMENT '小行星开场,0否,1是',
+  `is_expand_scenes` tinyint(1) NULL DEFAULT NULL COMMENT '是否展开场景预览,0否,1是',
   `views` int NULL DEFAULT NULL COMMENT '浏览量',
+  `is_vr_glasses` tinyint(1) NULL DEFAULT NULL COMMENT '是否显示VR眼镜,0否,1是',
+  `is_gyro` tinyint(1) NULL DEFAULT NULL COMMENT '是否显示陀螺仪,0否,是',
+  `is_home` tinyint(1) NULL DEFAULT NULL COMMENT '是否显示主页,0否,是',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '全景' ROW_FORMAT = Dynamic;
 
