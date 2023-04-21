@@ -11,7 +11,7 @@
  Target Server Version : 80032
  File Encoding         : 65001
 
- Date: 20/04/2023 13:12:59
+ Date: 21/04/2023 18:10:30
 */
 
 SET NAMES utf8mb4;
@@ -31,9 +31,10 @@ CREATE TABLE `user`  (
   `gender` tinyint(1) NOT NULL COMMENT '性别,0未知,1男,2女性别',
   `birth` datetime NULL DEFAULT NULL COMMENT '出生日期',
   `is_enabled` tinyint(1) NOT NULL COMMENT '是否启用',
-  `create_by` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '创建人',
-  `created_time` datetime NULL DEFAULT NULL COMMENT '创建日期',
+  `last_login_ip` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '最后登录IP',
+  `create_time` datetime NULL DEFAULT NULL COMMENT '创建日期',
   `update_time` datetime NULL DEFAULT NULL COMMENT '更新日期',
+  `create_by` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '创建人',
   `delete_flag` tinyint(1) NOT NULL COMMENT '删除标记',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '用户' ROW_FORMAT = DYNAMIC;
