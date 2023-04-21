@@ -11,7 +11,7 @@
  Target Server Version : 80032
  File Encoding         : 65001
 
- Date: 21/04/2023 18:19:32
+ Date: 21/04/2023 18:22:04
 */
 
 SET NAMES utf8mb4;
@@ -29,7 +29,8 @@ CREATE TABLE `user`  (
   `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '密码',
   `avatar` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '头像',
   `gender` tinyint(1) NOT NULL COMMENT '性别,0未知,1男,2女性别',
-  `birth` datetime NULL DEFAULT NULL COMMENT '出生日期',
+  `birth_date` datetime NULL DEFAULT NULL COMMENT '出生日期',
+  `is_locked` tinyint(1) NOT NULL COMMENT '是否锁定',
   `is_enabled` tinyint(1) NOT NULL COMMENT '是否启用',
   `last_login_ip` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '最后登录IP',
   `created_date` datetime NULL DEFAULT NULL COMMENT '创建日期',
