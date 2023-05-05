@@ -11,7 +11,7 @@
  Target Server Version : 80032
  File Encoding         : 65001
 
- Date: 03/05/2023 02:58:52
+ Date: 03/05/2023 18:34:37
 */
 
 SET NAMES utf8mb4;
@@ -76,6 +76,42 @@ BEGIN;
 COMMIT;
 
 -- ----------------------------
+-- Table structure for vr_group
+-- ----------------------------
+DROP TABLE IF EXISTS `vr_group`;
+CREATE TABLE `vr_group` (
+  `id` int NOT NULL COMMENT '主键ID',
+  `vr_id` int DEFAULT NULL COMMENT '全景ID',
+  `name` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '名称',
+  `is_default` tinyint(1) DEFAULT NULL COMMENT '是否默认,0否,1是',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- ----------------------------
+-- Records of vr_group
+-- ----------------------------
+BEGIN;
+COMMIT;
+
+-- ----------------------------
+-- Table structure for vr_group_copy1
+-- ----------------------------
+DROP TABLE IF EXISTS `vr_group_copy1`;
+CREATE TABLE `vr_group_copy1` (
+  `id` int NOT NULL COMMENT '主键ID',
+  `vr_id` int DEFAULT NULL COMMENT '全景ID',
+  `name` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '名称',
+  `is_default` tinyint(1) DEFAULT NULL COMMENT '是否默认,0否,1是',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- ----------------------------
+-- Records of vr_group_copy1
+-- ----------------------------
+BEGIN;
+COMMIT;
+
+-- ----------------------------
 -- Table structure for vr_scenes
 -- ----------------------------
 DROP TABLE IF EXISTS `vr_scenes`;
@@ -89,12 +125,12 @@ CREATE TABLE `vr_scenes` (
   `map_img_x` float(10,2) DEFAULT NULL COMMENT '户型图X值',
   `map_img_y` float(10,2) DEFAULT NULL COMMENT '户型图Y值',
   `status` tinyint(1) DEFAULT NULL COMMENT '全景合成状态：0合成中,1合成成功,2合成失败',
+  `scene_group_id` int DEFAULT NULL COMMENT '分组ID',
   `is_default` tinyint(1) DEFAULT NULL COMMENT '是否默认,0否,1是',
   `created_date` datetime DEFAULT NULL COMMENT '创建日期',
   `create_by` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '创建人',
   `last_updated_by` datetime DEFAULT NULL COMMENT '最后修改人',
   `last_updated_date` datetime DEFAULT NULL COMMENT '最后修改时间',
-  `delete_flag` tinyint(1) DEFAULT NULL COMMENT '删除标记',
   PRIMARY KEY (`vr_scenes_id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
 
