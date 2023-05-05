@@ -11,7 +11,7 @@
  Target Server Version : 80032
  File Encoding         : 65001
 
- Date: 21/04/2023 18:45:34
+ Date: 28/04/2023 17:20:03
 */
 
 SET NAMES utf8mb4;
@@ -78,6 +78,7 @@ DROP TABLE IF EXISTS `vr_scenes`;
 CREATE TABLE `vr_scenes`  (
   `vr_scenes_id` int NOT NULL COMMENT '主键ID',
   `vr_id` int NOT NULL COMMENT '全景ID',
+  `hlookat` float(10, 2) NOT NULL COMMENT '初始视角hlookat值',
   PRIMARY KEY (`vr_scenes_id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
