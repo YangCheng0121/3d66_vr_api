@@ -11,7 +11,7 @@
  Target Server Version : 80032
  File Encoding         : 65001
 
- Date: 03/05/2023 18:34:37
+ Date: 23/05/2023 23:01:12
 */
 
 SET NAMES utf8mb4;
@@ -94,19 +94,19 @@ BEGIN;
 COMMIT;
 
 -- ----------------------------
--- Table structure for vr_group_copy1
+-- Table structure for vr_music
 -- ----------------------------
-DROP TABLE IF EXISTS `vr_group_copy1`;
-CREATE TABLE `vr_group_copy1` (
+DROP TABLE IF EXISTS `vr_music`;
+CREATE TABLE `vr_music` (
   `id` int NOT NULL COMMENT '主键ID',
-  `vr_id` int DEFAULT NULL COMMENT '全景ID',
-  `name` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '名称',
-  `is_default` tinyint(1) DEFAULT NULL COMMENT '是否默认,0否,1是',
+  `name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '名称',
+  `url` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT 'URL',
+  `order` int DEFAULT NULL COMMENT '排序',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- ----------------------------
--- Records of vr_group_copy1
+-- Records of vr_music
 -- ----------------------------
 BEGIN;
 COMMIT;
